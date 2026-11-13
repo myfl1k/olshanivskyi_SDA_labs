@@ -28,12 +28,11 @@ SDA fifth lab
 3. При тестуванні програми підбирати такі вхідні набори значень матриці, щоб можна було легко відстежити коректність виконання сортування, і щоб ця коректність була протестована для всіх можливих випадків. З метою тестування дозволяється використовувати матриці меншого розміру.
 
 ## Варіант 20
-Задано квадратний двовимірний масив (матрицю) цілих чисел A[n,n]. Відсортувати побічну діагональ масиву методом вибору за незбільшенням.
-
+Задано квадратний двовимірний масив (матрицю) цілих чисел A[n,n]. Відсортувати *побічну діагональ* масиву **методом вибору за незбільшенням.**
 
 
 ## Програмний код
-#### (Lab5)
+#### (Lab5.с)
 ```c
 #include <stdio.h>
 #define n 8
@@ -41,23 +40,23 @@ SDA fifth lab
 int main()
 {
     int matrix[n][n];
-    int lenght = sizeof(matrix[0]) / sizeof(matrix[0][0]) - 1;
-    float Temp;
+    int length = sizeof(matrix[0]) / sizeof(matrix[0][0]) - 1, Temp;
 
-    for (int i = 0; i < lenght + 1; i++)
+    for (int i = 0; i < length + 1; i++)
     {
         printf("Enter the %d value for row #%d of the matrix: ", n, i+1);
-        for (int j = 0; j < lenght + 1; j++)
+        for (int j = 0; j < length + 1; j++)
         {
             scanf("%d", &matrix[i][j]);
         }
 
     }
 
+    // початковий вивід матриці
     printf("\n----------------------------------------\n");
-    for (int i = 0; i < lenght+1; i++)
+    for (int i = 0; i < length + 1; i++)
         {
-            for (int j = 0; j < lenght+1; j++)
+            for (int j = 0; j < length + 1; j++)
             {
                 printf("| %d ", matrix[i][j]);
             }
@@ -65,30 +64,32 @@ int main()
         }
 
 
-    for (int i = 0; i < lenght; i++)
+    // саме сортування
+    for (int i = 0; i < length; i++)
     {
         
-        int cordX = lenght - i, cordY = i;
-        for (int j = i+1; j <= lenght; j++)
+        int cordX = length - i, cordY = i;
+        for (int j = i+1; j <= length; j++)
         {
             
-            if (matrix[lenght - j][j] < matrix[cordX][cordY])
+            if (matrix[length - j][j] < matrix[cordX][cordY])
             {
-                cordX = lenght - j, cordY = j;
+                cordX = length - j, cordY = j;
             }
             
         }
         
-        Temp = matrix[lenght-i][i];
-        matrix[lenght-i][i] = matrix[cordX][cordY];
+        Temp = matrix[length-i][i];
+        matrix[length-i][i] = matrix[cordX][cordY];
         matrix[cordX][cordY] = Temp;
         
     }
     
+    // вивід відсортованої матриці
     printf("\n----------------------------------------\n");
-    for (int i = 0; i < lenght+1; i++)
+    for (int i = 0; i < length + 1; i++)
         {
-            for (int j = 0; j < lenght+1; j++)
+            for (int j = 0; j < length + 1; j++)
             {
                 printf("| %d ", matrix[i][j]);
             }
@@ -98,3 +99,12 @@ int main()
 
 }
 ```
+## Скріншоти виконна першої умови
+- вже відсортований початковий стан масиву;
+![](LAB2_method1_скріншот_виконная.png)
+## Скріншоти виконна другої умови
+- невідсортований початковий стан масиву (масив заповнений випадковими числами);
+![](LAB2_method1_скріншот_виконная.png)
+## Скріншоти виконна третьої умови
+- обернено відсортований (відносно заданого за завданням порядку) початковий стан масиву.
+![](LAB2_method1_скріншот_виконная.png)
