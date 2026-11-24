@@ -51,7 +51,7 @@ int main()
 
     }
 
-    // вивід початкової матриці
+    // вивід матриці
     printf("\n----------------------------------------\n");
     for (int i = 0; i < length + 1; i++)
         {
@@ -62,40 +62,46 @@ int main()
             printf("|\n----------------------------------------\n");
         }
 
+    // реалізація діапазону [0, 5]
+    int left_border = 0, right_border = 5;
 
-    // саме сортування
-    for (int i = 0; i < length; i++)
+    int low_index = 0, 
+    high_index = length, 
+    index_search_item = -1;
+
+    while (low_index <= high_index)
     {
-        
-        int cordX = length - i, cordY = i;
-        for (int j = i+1; j <= length; j++)
+        int mid_index = (low_index + high_index) / 2;
+        int guess = matrix[mid_index][mid_index];
+
+        if (guess >= left_border && guess <= right_border)
         {
-            
-            if (matrix[length - j][j] < matrix[cordX][cordY])
-            {
-                cordX = length - j, cordY = j;
-            }
-            
+            index_search_item = mid_index;
+            high_index = mid_index - 1;
         }
-        
-        Temp = matrix[length-i][i];
-        matrix[length-i][i] = matrix[cordX][cordY];
-        matrix[cordX][cordY] = Temp;
+
+        else if (guess > right_border)
+        {
+            low_index = mid_index + 1;
+        }
+
+        else
+        {
+            high_index = mid_index - 1;
+        }
         
     }
-    
-    // вивід відсортованої матриці
-    printf("\n----------------------------------------\n");
-    for (int i = 0; i < length + 1; i++)
-        {
-            for (int j = 0; j < length + 1; j++)
-            {
-                printf("|%4d ", matrix[i][j]);
-            }
-            printf("|\n----------------------------------------\n");
-        }
-    return 0;
 
+    if (index_search_item != -1)
+    {
+        printf("Search number is %.2f and under index (%d, %d)\n", matrix[index_search_item][index_search_item], index_search_item, index_search_item);
+    }
+    else
+    {
+        printf("This array doesn't contain any numbers in the range[0, 5]");
+    }
+    
+    return 0;
 }
 ```
 ## Скріншоти виконна першої умови
