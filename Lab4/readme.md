@@ -38,15 +38,16 @@ SDA fourth lab
 
 int main()
 {
-    int matrix[n][n];
-    int length = sizeof(matrix[0]) / sizeof(matrix[0][0]) - 1, Temp;
+    
+    double matrix[n][n];
+    int length = sizeof(matrix[0]) / sizeof(matrix[0][0]) - 1;
 
     for (int i = 0; i < length + 1; i++)
     {
         printf("Enter the %d value for row #%d of the matrix: ", n, i+1);
         for (int j = 0; j < length + 1; j++)
         {
-            scanf("%d", &matrix[i][j]);
+            scanf("%lf", &matrix[i][j]);
         }
 
     }
@@ -57,7 +58,7 @@ int main()
         {
             for (int j = 0; j < length + 1; j++)
             {
-                printf("|%4d ", matrix[i][j]);
+                printf("| %5.2f ", matrix[i][j]);
             }
             printf("|\n----------------------------------------\n");
         }
@@ -105,14 +106,17 @@ int main()
 }
 ```
 ## Скріншоти виконна першої умови
-#### - вже відсортований початковий стан масиву;
-![](../pictures_for_lab/Lab5_pictures/LAB5_first_conditional.png)
+#### - шуканий елемент є в масиві й міститься десь посередині.
+![](../LAB4_first_conditional.png)
 ## Скріншоти виконна другої умови
-#### - невідсортований початковий стан масиву (масив заповнений випадковими числами);
-![](../pictures_for_lab/Lab5_pictures/LAB5_second_conditional.png)
+#### - шуканий елемент є в масиві й міститься ліворуч.
+![](../LAB4_second_conditional.png)
 ## Скріншоти виконна третьої умови
-#### - обернено відсортований (відносно заданого за завданням порядку) початковий стан масиву.
-![](../pictures_for_lab/Lab5_pictures/LAB5_third_conditional.png)
+#### - шуканий елемент є в масиві й міститься праворуч.
+![](../LAB4_third_conditional.png)
+## Скріншоти виконна четвертої умови
+#### - коли шуканого елемента немає взагалі
+![](../LAB4_fourth_conditional.png)
 
 ## Висновок:
 ### У ході виконання даної лабораторної я дізнався та практично засвоїв знання з використання алгоритмів сортування, зокрема алгоритм сортування методом вибору, на прикладі сортування побічної діагоналі квадратної матриці за незбільшенням з трьома початковими вводними даними.
