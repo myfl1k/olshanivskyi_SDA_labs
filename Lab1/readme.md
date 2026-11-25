@@ -33,10 +33,10 @@ SDA first lab
 #### y(x) = f2(2x³ + 8x²), x ∈ (–∞, –19) ∪ (–3,0]
 
 ## Блок схеми
-![](/../Lab1_pictures/Lab1_ex1_method1.drawio.png)
-![](https://github.com/myfl1k/olshanivskyi_lab1/blob/main/pictures_for_lab/Lab1_ex1_method2.drawio.png)
-![](https://github.com/myfl1k/olshanivskyi_lab1/blob/main/pictures_for_lab/Lab1_ex2_method1.drawio.png)
-![](https://github.com/myfl1k/olshanivskyi_lab1/blob/main/pictures_for_lab/Lab1_ex2_method2.drawio.png)
+![](../pictures_for_lab/Lab1_pictures/Lab1_ex1_method1.drawio.png)
+![](../pictures_for_lab/Lab1_pictures/Lab1_ex1_method2.drawio.png)
+![](../pictures_for_lab/Lab1_pictures/Lab1_ex2_method1.drawio.png)
+![](../pictures_for_lab/Lab1_pictures/Lab1_ex2_method2.drawio.png)
 
 ## Програмний код
 #### Перша прогама перший метод (Lab1_ex1_method1)
@@ -150,7 +150,7 @@ int main()
 | 50  | x(50) lies outside the range [8; 23)                               |
 ---
 ### Відповідно скрін з прикладами
-![](https://github.com/myfl1k/olshanivskyi_lab1/blob/main/pictures_for_lab/different_num_for_ex1.png)
+![](../pictures_for_lab/Lab1_pictures/different_num_for_ex1.png)
 
 ### Набір різноманітних чисел для другої програми
 | X1  |                         functionY1                                     |
@@ -164,5 +164,5 @@ int main()
 |  5  | x(5) lies outside the range [-inf; -19) U (-3; 0]                      |
 ---
 ### Відповідно скрін з прикладами
-![](https://github.com/myfl1k/olshanivskyi_lab1/blob/main/pictures_for_lab/different_num_for_ex2.png)
+![](../pictures_for_lab/Lab1_pictures/different_num_for_ex2.png)
 
